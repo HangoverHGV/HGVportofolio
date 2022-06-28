@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PDF Converter</title>
+        <meta name="viewport" content="width=device-width, initial scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='pdfstyle.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='pdf.ico') }}">
+    </head>
+<body>
+<div class="container">
+    <h3>PDF Online Converter</h3>
+    <form action="/pdfconvert/convert" method="post" enctype="multipart/form-data">
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="pdf" class="pdf" accept=".pdf" name="pdf"><br><br>
+      <button id="btn">Convert</button>
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup</title>
+    <meta name="viewport" content="width=device-width, initial scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='formstyle.css') }}"/>
+  </head>
+  <body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category,message in messages %}
+        {% if category == 'error' %}
+        <div class="alert-danger">
+          {{ message }}
+        </div>
+        {% else %}
+        <div class="alert-success">
+          {{ message }}
+        </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+    <div class="formcontainer">
+      <form method="POST" action="" >
+        <label for="name" id="lbl">Name:</label><br>
+        <input type="text" class="name" id="name" name="name" placeholder="name"><br>
+        <label for="username" id="lbl">E-mail:</label><br>
+        <input type="email" class="username" id="username" name="username" placeholder="Username"><br>
+        <label for="password1" id="lbl">Password:</label><br><br>
+        <input type="password" class="password1" id="password1" name="password1" placeholder="Password"> <br><br>
+        <label for="password2" id="lbl">Re-type Password:</label><br><br>
+        <input type="password" class="password2" id="password2" name="password2" placeholder="Re-type Password"> <br><br>
+        <button type="submit" class="submit">Signup</button>
+      </form>
+    </div>
+
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,54 @@
+body {
+  margin: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("python.jpg");
+  background-size: cover;
+}
+
+.alert-danger{
+  position: absolute;
+  top: 5%;
+  font-family: sans-serif;
+  color:rgb(237, 82, 82);
+}
+
+.alert-success{
+  position: absolute;
+  top: 5%;
+  font-family: sans-serif;
+  color:rgb(57, 214, 91);
+}
+
+.textcontainer{
+  position: absolute;
+  top:10%;
+  left: 10%;
+  display: block;
+  width: 550px;
+  border: 15px;
+  margin: 20px;
+  padding: 50px;
+  color: rgba(30, 244, 255, 0.7);
+  font-size: 25px;
+  text-align: left;
+}
+
+.download{
+  position: absolute;
+  top:7%;
+  left:50%;
+  
+}
+
+.btndownload{
+  background-color: rgba(0, 95, 112, 0.5);
+  border: none;
+  color: rgb(30, 244, 255);
+  padding: 12px 16px;
+  font-size:16px;
+  cursor: pointer;
+}
+
+.btndownload:hover{
+  font-size:16px;
+}

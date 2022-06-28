@@ -1,0 +1,28 @@
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}"/>
+<div class="topnav" id="mytopnav">
+  <a href="/" class="active">Home</a>
+  {% if user.is_authenticated %}
+  <a class="hvr" id="sgnpos" href="/signup">Sign up</a>
+  <a class="hvr" id="logpos" href="/logout">Log out</a>
+  <a href="/dashboard" class="hvr" id="usrpos">{{ user.username }}</a>
+  {% else %}
+  <a class="hvr" id="sgnpos" href="/signup">Sign up</a>
+  <a class="hvr" id="logpos" href="/login">Log in</a>
+  {% endif %}
+  <div class="dropdown">
+    <button class="dropbtn" id="dropdown">Apps</button>
+    <div class="dropdown-content">
+      {% if user.is_authenticated %}
+        <a href="/pdfconvert">PDF Converter</a>
+        <a href="/calculatorcubaj">Calculator Cubaj</a>
+      {% else %}
+        <a href="/pdfconvert">PDF Converter</a>
+      {% endif %}
+    </div>
+  </div>
+
+{% block content %}
+
+{% endblock %}

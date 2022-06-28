@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator Cubaj</title>
+        <meta name="viewport" content="width=device-width, initial scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='calculator.css') }}">
+    </head>
+    <body>
+        <form action="/calculatorcubaj/calculate" method="post">
+            <div class="calculator">
+                <label for="lungime" id="lbl">Lungime[m]</label><br>
+                <input type="text" id="lungime" name="lungime" placeholder="Lungimea"><br>
+                <label for="diametru" id="lbl">Diametru[cm]</label><br>
+                <input type="text" id="diametru" name="diametru" placeholder="Diametru"><br><br>
+                <input type="submit" value="Calculeaza" id="button">
+            </div>
+        </form>
+        <label for="rezultat" id="rezultat">{{ volum }}</label>
+        <label for="total", id="total">Total: {{ total }}</label>
+        <table class="lst">
+            <tr>
+                <th>Index</th>
+                <th>Lungime</th>
+                <th>Diametru</th>
+                <th>Volum</th>
+            </tr>
+            {% for r in user.calculator %}
+                <tr id="content">
+                    <td><a class="a" href="/delete/{{ r.id }}">{{ loop.index }}</a></td>
+                    <td><a class="a" href="/delete/{{ r.id }}">{{ r.lungime }}</a></td>
+                    <td><a class="a" href="/delete/{{ r.id }}">{{ r.diametru }}</a></td>
+                    <td><a class="a" href="/delete/{{ r.id }}">{{ r.volumul }}</a></td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    </body>
+    
+</html>
+{% endblock %}

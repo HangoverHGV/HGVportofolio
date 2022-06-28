@@ -1,0 +1,15 @@
+.icons {
+  position: absolute;
+  top: 38%;
+  left: 2%;
+  color: white;
+}
+
+#color {
+  color: white;
+  font-size: 35px;
+}
+
+#color:hover {
+  font-size: 50px;
+}
