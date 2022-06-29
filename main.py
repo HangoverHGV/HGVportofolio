@@ -104,7 +104,7 @@ def whatsap():
 
 @app.route('/downcv')
 def downloadcv():
-    return send_file('mycv/cv.pdf', as_attachment=True)
+    return send_file('mycv/CV_Hango_Bogdan_en.pdf', as_attachment=True)
 
 
 #--------------------PDF Converter-----------------------------
