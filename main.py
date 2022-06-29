@@ -17,10 +17,10 @@ app = Flask(__name__)
 load_dotenv()
 
 
-db_user = os.getenv('DB_USER')
-db_databse = os.getenv('DB_DATABASE')
-db_pass = os.getenv('DB_PASSWORD')
-db_host = os.getenv('DB_HOST')
+db_user = os.getenv('MARIADB_USER')
+db_databse = os.getenv('MARIADB_DATABASE')
+db_pass = os.getenv('MARIADB_PASSWORD')
+db_host = os.getenv('MARIADB_HOST')
 
 uri = 'mysql+pymysql://'+ str(db_user) +':'+ str(db_pass) +'@'+ str(db_host) +'/'+ str(db_databse)
 
