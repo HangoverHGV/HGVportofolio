@@ -101,22 +101,6 @@ def index():
     return render_template('index.html', user=current_user)
 
 
-#---------------------------------------Mail TO------------------------------------
-
-@app.route('/mailto')
-def mailto():
-    webbrowser.open('mailto:hangobogdan@gmail.com', new=1)
-    return redirect(url_for('index'))
-
-
-#---------------------------------------Whatsapp------------------------------------
-
-@app.route('/whatsapp')
-def whatsap():
-    webbrowser.open('https://api.whatsapp.com/send?phone=40784430527', new=1)
-    return redirect(url_for('index'))
-    
-
 #---------------------------------------Download CV------------------------------------
 
 @app.route('/downcv')
@@ -268,4 +252,4 @@ def logout():
 
 #---------------RUN-----------------------------
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False)
+    app.run(host='0.0.0.0', debug=True)
