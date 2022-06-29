@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from keygen import generatepass
 import convertpdf
 from calculatorcubaj import Volum
+from time import sleep
 
 
 app = Flask(__name__)
@@ -48,6 +49,20 @@ class User(db.Model, UserMixin):
 tblnamerez = Rezultate().__class__.__name__
 tblnameusr = User().__class__.__name__
 
+#------------------------------------CheckConnection---------------------------
+
+for i in range(6):
+    connected = True
+    try:
+        db.session.execute('SELECT 1')
+    except:
+        connected = False
+    
+    if connected:
+        break
+    else:
+        sleep(3)
+
 
 engine = create_engine(uri)
 def GetTableName(name):
@@ -61,6 +76,8 @@ def GetTableName(name):
             exists = False
     
     return exists
+
+
 
 if GetTableName(tblnamerez) == False or GetTableName(tblnameusr) == False:
     db.create_all()
