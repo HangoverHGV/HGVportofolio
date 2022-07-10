@@ -21,7 +21,7 @@ body {
   color:rgb(57, 214, 91);
 }
 
-.textcontainer{
+#text{
   position: absolute;
   top:10%;
   left: 10%;
